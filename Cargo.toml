@@ -2,3 +2,7 @@
 name = "valgrind"
 version = "0.1.0"
 authors = ["edef <edef@edef.eu>"]
+
+[[bin]]
+name = "am_i_on_valgrind"
+doc = false
