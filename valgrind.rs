@@ -130,6 +130,12 @@ pub fn discard_translations(addr: *const i8, len: usize) -> Value {
   }
 }
 
+pub fn count_errors() -> Value {
+  unsafe {
+    do_client_request(0, &[VG_USERREQ__COUNT_ERRORS as Value, 0, 0, 0, 0, 0])
+  }
+}
+
 fn main() {
   println!("currently {} Valgrinds deep", running_on_valgrind());
 }
