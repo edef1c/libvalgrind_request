@@ -17,9 +17,10 @@ mod imp {
         : "cc", "memory"
         : "volatile");
     result
+  }
 }
 
-#[repr(u64)]
+#[repr(u16)]
 #[allow(non_camel_case_types)]
 pub enum Vg_ClientRequest {
   VG_USERREQ__RUNNING_ON_VALGRIND  = 0x1001,
