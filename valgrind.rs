@@ -3,6 +3,7 @@ use self::Vg_ClientRequest::*;
 use imp::*;
 
 
+#[cfg(target_arch = "x86_64", target_os = "linux")]
 mod imp {
   pub type Value = u64;
 
