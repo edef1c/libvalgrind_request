@@ -1,7 +1,6 @@
 #![feature(asm)]
 pub use self::Vg_ClientRequest::*;
-pub use imp::Value;
-use imp::*;
+pub use imp::*;
 
 #[cfg(target_arch = "x86")]
 mod imp {
