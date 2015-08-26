@@ -2,7 +2,7 @@
 use self::Vg_ClientRequest::*;
 use imp::*;
 
-#[cfg(target_arch = "x86", target_os = "linux")]
+#[cfg(target_arch = "x86")]
 mod imp {
   pub type Value = u32;
 
@@ -21,7 +21,7 @@ mod imp {
   }
 }
 
-#[cfg(target_arch = "x86_64", target_os = "linux")]
+#[cfg(target_arch = "x86_64")]
 mod imp {
   pub type Value = u64;
 
