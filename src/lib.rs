@@ -115,12 +115,14 @@ pub enum Vg_ClientRequest {
   VG_USERREQ__VEX_INIT_FOR_IRI = 0x1901
 }
 
+#[inline]
 pub fn running_on_valgrind() -> Value {
   unsafe {
     do_client_request(0, &[VG_USERREQ__RUNNING_ON_VALGRIND as Value, 0, 0, 0, 0, 0])
   }
 }
 
+#[inline]
 pub fn discard_translations(addr: *const i8, len: usize) -> Value {
   unsafe {
     do_client_request(0, &[VG_USERREQ__DISCARD_TRANSLATIONS as Value,
@@ -130,12 +132,14 @@ pub fn discard_translations(addr: *const i8, len: usize) -> Value {
   }
 }
 
+#[inline]
 pub fn count_errors() -> Value {
   unsafe {
     do_client_request(0, &[VG_USERREQ__COUNT_ERRORS as Value, 0, 0, 0, 0, 0])
   }
 }
 
+#[inline]
 pub fn stack_register(start: *const i8, end: *const i8) -> Value {
   unsafe {
     do_client_request(0, &[VG_USERREQ__STACK_REGISTER as Value,
@@ -145,6 +149,7 @@ pub fn stack_register(start: *const i8, end: *const i8) -> Value {
   }
 }
 
+#[inline]
 pub fn stack_change(id: Value, start: *const i8, end: *const i8) -> Value {
   unsafe {
     do_client_request(0, &[VG_USERREQ__STACK_CHANGE as Value,
@@ -155,6 +160,7 @@ pub fn stack_change(id: Value, start: *const i8, end: *const i8) -> Value {
   }
 }
 
+#[inline]
 pub fn stack_deregister(id: Value) {
   unsafe {
     do_client_request(0, &[VG_USERREQ__STACK_DEREGISTER as Value,
