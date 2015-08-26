@@ -121,6 +121,15 @@ pub fn running_on_valgrind() -> Value {
   }
 }
 
+pub fn discard_translations(addr: *const i8, len: usize) -> Value {
+  unsafe {
+    do_client_request(0, &[VG_USERREQ__DISCARD_TRANSLATIONS as Value,
+                          addr as usize as Value,
+                          len as Value,
+                          0, 0, 0])
+  }
+}
+
 fn main() {
   println!("currently {} Valgrinds deep", running_on_valgrind());
 }
