@@ -97,6 +97,6 @@ pub enum Vg_ClientRequest {
 
 fn main() {
   unsafe {
-    println!("currently {} Valgrinds deep", do_client_request(0, &[VG_USERREQ__RUNNING_ON_VALGRIND as u64, 0, 0, 0, 0, 0]));
+    println!("currently {} Valgrinds deep", do_client_request(0, &[VG_USERREQ__RUNNING_ON_VALGRIND as Value, 0, 0, 0, 0, 0]));
   }
 }
