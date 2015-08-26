@@ -4,6 +4,7 @@ sudo: false
 install:
   - .travis/docs/install
 script: 
+  - cargo run
   - cargo test
   - cargo bench
   - cargo doc --no-deps
