@@ -1,5 +1,6 @@
 #![feature(asm)]
 use self::Vg_ClientRequest::*;
+pub use imp::Value;
 use imp::*;
 
 #[cfg(target_arch = "x86")]
