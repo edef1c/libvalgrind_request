@@ -1,9 +1,12 @@
 #![feature(asm)]
 use self::Vg_ClientRequest::*;
+use imp::*;
 
-pub type Value = u64;
 
-pub unsafe fn do_client_request(default: Value, args: &[Value; 6]) -> Value {
+mod imp {
+  pub type Value = u64;
+
+  pub unsafe fn do_client_request(default: Value, args: &[Value; 6]) -> Value {
     let result;
     asm!("rolq $$3,  %rdi ; rolq $$13, %rdi
           rolq $$61, %rdi ; rolq $$51, %rdi
