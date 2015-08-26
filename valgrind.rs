@@ -136,6 +136,33 @@ pub fn count_errors() -> Value {
   }
 }
 
+pub fn stack_register(start: *const i8, end: *const i8) -> Value {
+  unsafe {
+    do_client_request(0, &[VG_USERREQ__STACK_REGISTER as Value,
+                          start as usize as Value,
+                          end   as usize as Value,
+                          0, 0, 0])
+  }
+}
+
+pub fn stack_change(id: Value, start: *const i8, end: *const i8) -> Value {
+  unsafe {
+    do_client_request(0, &[VG_USERREQ__STACK_CHANGE as Value,
+                          id,
+                          start as usize as Value,
+                          end   as usize as Value,
+                          0, 0])
+  }
+}
+
+pub fn stack_deregister(id: Value) {
+  unsafe {
+    do_client_request(0, &[VG_USERREQ__STACK_DEREGISTER as Value,
+                          id,
+                          0, 0, 0, 0]);
+  }
+}
+
 fn main() {
   println!("currently {} Valgrinds deep", running_on_valgrind());
 }
