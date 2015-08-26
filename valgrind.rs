@@ -115,8 +115,12 @@ pub enum Vg_ClientRequest {
   VG_USERREQ__VEX_INIT_FOR_IRI = 0x1901
 }
 
-fn main() {
+pub fn running_on_valgrind() -> Value {
   unsafe {
-    println!("currently {} Valgrinds deep", do_client_request(0, &[VG_USERREQ__RUNNING_ON_VALGRIND as Value, 0, 0, 0, 0, 0]));
+    do_client_request(0, &[VG_USERREQ__RUNNING_ON_VALGRIND as Value, 0, 0, 0, 0, 0])
   }
+}
+
+fn main() {
+  println!("currently {} Valgrinds deep", running_on_valgrind());
 }
