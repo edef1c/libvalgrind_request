@@ -1,0 +1,11 @@
+language: rust
+rust: nightly
+sudo: false
+install:
+  - .travis/docs/install
+script: 
+  - cargo test
+  - cargo bench
+  - cargo doc --no-deps
+after_success:
+  - .travis/docs/after_success
