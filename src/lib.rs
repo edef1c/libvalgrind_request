@@ -1,44 +1,8 @@
 #![feature(asm)]
 pub use self::Vg_ClientRequest::*;
-pub use imp::*;
+pub use arch::*;
 
-#[cfg(target_arch = "x86")]
-mod imp {
-  pub type Value = u32;
-
-  #[inline(always)]
-  pub unsafe fn do_client_request(default: Value, args: &[Value; 6]) -> Value {
-    let result;
-    asm!("roll $$3,  %edi ; roll $$13, %edi
-          roll $$29, %edi ; roll $$19, %edi
-          xchgl %ebx, %ebx"
-        : "={edx}" (result)
-        : "{eax}" (args.as_ptr())
-          "{edx}" (default)
-        : "cc", "memory"
-        : "volatile");
-    result
-  }
-}
-
-#[cfg(target_arch = "x86_64")]
-mod imp {
-  pub type Value = u64;
-
-  #[inline(always)]
-  pub unsafe fn do_client_request(default: Value, args: &[Value; 6]) -> Value {
-    let result;
-    asm!("rolq $$3,  %rdi ; rolq $$13, %rdi
-          rolq $$61, %rdi ; rolq $$51, %rdi
-          xchgq %rbx, %rbx"
-        : "={rdx}" (result)
-        : "{rax}" (args.as_ptr())
-          "{rdx}" (default)
-        : "cc", "memory"
-        : "volatile");
-    result
-  }
-}
+mod arch;
 
 #[repr(u16)]
 #[allow(non_camel_case_types)]
