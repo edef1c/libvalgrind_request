@@ -1,5 +1,5 @@
 #![feature(asm)]
-use self::Vg_ClientRequest::*;
+pub use self::Vg_ClientRequest::*;
 pub use imp::Value;
 use imp::*;
 
