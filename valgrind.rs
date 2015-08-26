@@ -4,7 +4,7 @@ use imp::*;
 
 #[cfg(target_arch = "x86", target_os = "linux")]
 mod imp {
-  pub type Value = u64;
+  pub type Value = u32;
 
   #[inline(always)]
   pub unsafe fn do_client_request(default: Value, args: &[Value; 6]) -> Value {
