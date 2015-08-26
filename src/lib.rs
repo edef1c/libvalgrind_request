@@ -162,7 +162,3 @@ pub fn stack_deregister(id: Value) {
                           0, 0, 0, 0]);
   }
 }
-
-fn main() {
-  println!("currently {} Valgrinds deep", running_on_valgrind());
-}
