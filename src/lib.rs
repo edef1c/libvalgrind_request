@@ -1,4 +1,5 @@
-#![feature(asm)]
+#![feature(asm, no_std, core_slice_ext)]
+#![no_std]
 pub use abi::Vg_ClientRequest;
 pub use abi::Vg_ClientRequest::*;
 pub use arch::*;
