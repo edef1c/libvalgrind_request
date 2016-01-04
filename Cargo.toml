@@ -1,5 +1,6 @@
 [package]
 name = "valgrind"
 version = "0.1.0"
+description = "Valgrind client bindings"
 authors = ["Nathan Zadoks <nathan@nathan7.eu>"]
 license = "ISC"
