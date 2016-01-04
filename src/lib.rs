@@ -15,7 +15,7 @@ pub fn running_on_valgrind() -> Value {
 }
 
 #[inline]
-pub fn discard_translations(addr: *const i8, len: usize) -> Value {
+pub fn discard_translations(addr: *const u8, len: usize) -> Value {
   unsafe {
     do_client_request(0, &[VG_USERREQ__DISCARD_TRANSLATIONS as Value,
                           addr as usize as Value,
@@ -32,7 +32,7 @@ pub fn count_errors() -> Value {
 }
 
 #[inline]
-pub fn stack_register(start: *const i8, end: *const i8) -> Value {
+pub fn stack_register(start: *const u8, end: *const u8) -> Value {
   unsafe {
     do_client_request(0, &[VG_USERREQ__STACK_REGISTER as Value,
                           start as usize as Value,
@@ -42,7 +42,7 @@ pub fn stack_register(start: *const i8, end: *const i8) -> Value {
 }
 
 #[inline]
-pub fn stack_change(id: Value, start: *const i8, end: *const i8) -> Value {
+pub fn stack_change(id: Value, start: *const u8, end: *const u8) -> Value {
   unsafe {
     do_client_request(0, &[VG_USERREQ__STACK_CHANGE as Value,
                           id,
