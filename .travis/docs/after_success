@@ -3,7 +3,7 @@ set -e
 export PATH="$HOME/.local/bin:$PATH"
 
 if [ "$TRAVIS_PULL_REQUEST" = false ] && [ "$TRAVIS_BRANCH" = master ]; then
-  echo '<meta http-equiv="refresh" content="0;url=valgrind/">' > target/doc/index.html
+  echo '<meta http-equiv="refresh" content="0;url=valgrind_request/">' > target/doc/index.html
   ghp-import -n target/doc
   git remote set-url origin "https://${TOKEN}@github.com/${TRAVIS_REPO_SLUG}"
   git push -f origin gh-pages

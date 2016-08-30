@@ -1,5 +1,5 @@
 [package]
-name = "valgrind"
+name = "valgrind_request"
 version = "1.0.0"
 description = "Valgrind client bindings"
 authors = ["Nathan Zadoks <nathan@nathan7.eu>"]
