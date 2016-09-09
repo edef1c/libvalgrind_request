@@ -11,3 +11,7 @@ mod imp;
 #[cfg(target_arch = "arm")]
 #[path = "arm.rs"]
 mod imp;
+
+#[cfg(target_arch = "aarch64")]
+#[path = "aarch64.rs"]
+mod imp;
