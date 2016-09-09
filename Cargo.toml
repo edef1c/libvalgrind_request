@@ -1,6 +1,6 @@
 [package]
 name = "valgrind_request"
-version = "1.0.0"
+version = "1.1.0"
 description = "wrapper for Valgrind client requests"
 authors = ["Nathan Zadoks <nathan@nathan7.eu>"]
 license = "Zlib"
