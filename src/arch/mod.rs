@@ -1,4 +1,4 @@
-pub use self::imp::{Value, do_client_request};
+pub use self::imp::{do_client_request, Value};
 
 #[cfg(target_arch = "x86_64")]
 #[path = "x86_64.rs"]
