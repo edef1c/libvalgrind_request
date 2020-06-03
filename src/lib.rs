@@ -1,4 +1,4 @@
-#![feature(asm)]
+#![feature(llvm_asm)]
 #![no_std]
 pub use abi::ClientRequest;
 pub use arch::*;
